@@ -9,7 +9,9 @@ from app.models import Location, LocationRegister
 router = APIRouter()
 
 
-@router.post("/", response_model=LocationRegister, status_code=status.HTTP_201_CREATED)
+@router.post(
+    "/", response_model=LocationRegister, status_code=status.HTTP_201_CREATED, description="Register a location"
+)
 async def register_location(location: Location, db=Depends(lambda: default_db)):
     location_id = str(uuid4())
     location_data = dict(location)

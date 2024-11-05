@@ -10,7 +10,12 @@ from app.models import TaskResponse
 router = APIRouter()
 
 
-@router.post("/async", description="Calculate distance between two locations asynchronously")
+@router.post(
+    "/async",
+    response_model=TaskResponse,
+    name="calculate_distance_async",
+    description="Calculate distance between two locations asynchronously",
+)
 async def calculate_distance_async(location_ids: List[str], db=Depends(lambda: default_db)):
     logger.info("Calculating distance", location_ids=location_ids)
     locations = []
