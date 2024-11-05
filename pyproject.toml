@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "geokapti-project"
+version = "0.1.0"
+description = "Microservices for location registration and route distance calculation"
+authors = ["Joel Guerrero"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.4"
+pydantic = "^2.9.2"
+uvicorn = "^0.32.0"
+structlog = "^24.4.0"
+celery = "^5.4.0"
+redis = "^4.0.2"
+kombu = "^5.4.2"
+motor = "^3.6.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.0.1"
+pytest = "^8.3.3"
+httpx = "^0.27.2"
+pytest-asyncio = "^0.24.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
