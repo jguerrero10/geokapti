@@ -1,9 +1,9 @@
 from typing import List
 
-from fastapi import APIRouter, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.celery_app import calculate_total_distance
-from app.db import db
+from app.db import db as default_db
 from app.logger import logger
 from app.models import TaskResponse
 
@@ -11,7 +11,7 @@ router = APIRouter()
 
 
 @router.post("/async", description="Calculate distance between two locations asynchronously")
-async def calculate_distance_async(location_ids: List[str]):
+async def calculate_distance_async(location_ids: List[str], db=Depends(lambda: default_db)):
     logger.info("Calculating distance", location_ids=location_ids)
     locations = []
     for loc_id in location_ids:
