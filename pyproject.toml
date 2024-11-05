@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "geokapti-project"
-version = "0.1.1"
+version = "0.1.2"
 description = "Microservices for location registration and route distance calculation"
 authors = ["Joel Guerrero"]
 readme = "README.md"
