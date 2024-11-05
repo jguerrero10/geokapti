@@ -16,8 +16,8 @@
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/username/geokapti_project.git
-   cd geokapti_project
+   git clone https://github.com/jguerrero10/geokapti.git
+   cd geokapti
     ```
 2. **Set up the virtual environment**:
 
@@ -51,8 +51,7 @@ uvicorn app.main:app --reload
 
 The API will be available at http://127.0.0.1:8000.
 
-<<<<<<< Updated upstream
-=======
+
 ### API Documentation
 
 You can view the API documentation in Swagger or ReDoc:
@@ -94,7 +93,7 @@ Each deployment function in the script handles the following:
 
 After running the command, the application will be deployed to the specified cloud provider.
 
->>>>>>> Stashed changes
+
 ### Endpoints
 
 1. **Register a Location**: `POST /api/v1/locations/`
