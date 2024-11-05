@@ -51,6 +51,50 @@ uvicorn app.main:app --reload
 
 The API will be available at http://127.0.0.1:8000.
 
+<<<<<<< Updated upstream
+=======
+### API Documentation
+
+You can view the API documentation in Swagger or ReDoc:
+
+- **Swagger UI**: http://127.0.0.1:8000/docs
+- **ReDoc**: http://127.0.0.1:8000/redoc
+
+### Deployments
+
+You can deploy the project to multiple cloud providers using the _deploy.sh_ script. This script allows you to choose between Azure, AWS, or Google Cloud.
+
+#### Deployment Requirements
+
+Before running the script, ensure that you have:
+
+- Docker installed and configured.
+- The CLI tools for each provider:
+  - Azure CLI
+  - AWS CLI
+  - Google Cloud CLI
+- Authentication set up for each provider:
+  - Azure: Run az login
+  - AWS: Run aws configure
+  - Google Cloud: Run gcloud auth login
+
+#### Usage
+
+The _deploy.sh_ script takes one argument to specify the cloud provider for deployment:
+
+```bash
+./deploy.sh {azure|aws|gcloud}
+```
+
+Each deployment function in the script handles the following:
+
+1. **Build the Docker image**: Creates a Docker image for the FastAPI application.
+2. **Push the image to the container registry**: Pushes the Docker image to the container registry of the specified cloud provider.
+3. **Deploy the container**: Deploys the container to the cloud provider's Kubernetes cluster.
+
+After running the command, the application will be deployed to the specified cloud provider.
+
+>>>>>>> Stashed changes
 ### Endpoints
 
 1. **Register a Location**: `POST /api/v1/locations/`
