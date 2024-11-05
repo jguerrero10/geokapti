@@ -1,4 +1,5 @@
 from math import sqrt
+from typing import Dict, List
 
 from celery import Celery
 
@@ -6,7 +7,16 @@ celery_app = Celery("tasks", broker="redis://redis:6379/0", backend="redis://red
 
 
 @celery_app.task
-def calculate_total_distance(locations):
+def calculate_total_distance(locations: List[Dict[str, float]]) -> float:
+    """
+    Calculate the total distance between a list of locations.
+
+    Args:
+        locations (list[dict[str, float]]): A list of dictionaries containing latitude and longitude of locations.
+
+    Returns:
+        float: The total distance calculated between the locations.
+    """
     total_distance = 0.0
     for i in range(len(locations) - 1):
         loc1 = locations[i]
