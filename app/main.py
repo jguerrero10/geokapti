@@ -7,9 +7,9 @@ app = FastAPI(
     description="GeoKapti is a FastAPI application that allows for location registration and management, "
     "as well as calculating distances between them. This app includes an API to create and register "
     "locations in MongoDB, measure route distances, and perform asynchronous tasks.",
-    version="0.1.2",
+    version="0.2.0",
 )
 
 
-app.include_router(location.router, prefix="/location", tags=["Location"])
-app.include_router(distance.router, prefix="/distance", tags=["Distance"])
+app.include_router(location.router, prefix="/location")
+app.include_router(distance.router, prefix="/distance")
