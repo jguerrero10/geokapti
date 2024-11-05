@@ -16,8 +16,8 @@
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/username/geokapti_project.git
-   cd geokapti_project
+   git clone https://github.com/jguerrero10/geokapti.git
+   cd geokapti
     ```
 2. **Set up the virtual environment**:
 
@@ -50,6 +50,13 @@ uvicorn app.main:app --reload
 ```
 
 The API will be available at http://127.0.0.1:8000.
+
+### API Documentation
+
+You can view the API documentation in Swagger or ReDoc:
+
+- **Swagger UI**: http://127.0.0.1:8000/docs
+- **ReDoc**: http://127.0.0.1:8000/redoc
 
 ### Endpoints
 
